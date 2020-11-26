@@ -1,0 +1,130 @@
+@charset "utf-8";
+
+/* =====================基本設計===================== */
+
+html {
+	font-size: 62.5%; /* -> 10px*/
+}
+
+body{
+	margin: 0;
+	font-family:"ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+	line-height:2;
+	font-size:18px;
+	color: #333333;
+}
+
+/* * {
+  box-sizing: border-box;
+} */
+
+a:link { color: #333333;
+	text-decoration: none;
+ 	}
+
+a:visited { color: #333333; }
+
+a:hover { color: #cccccc; }
+
+a:active { color: #cccccc; }
+
+img {
+	/* display: block; */
+	vertical-align: bottom;
+	max-width: 100%;
+	height: auto;
+
+}
+
+
+/* =====================メインコンテンツ===================== */
+/* pc版で見たときのスタイル */
+#container {
+	max-width: 960px;
+	margin: 0 auto;
+}
+
+.box{
+	margin-left: 20px;
+	margin-right: 20px;
+}
+
+@media (max-width:767PX) {
+/* 上のpc用のをコピーして変えたいところを変える */
+	#container{
+		box-shadow: none;
+		/* 水平、垂直、ぼかし、ぼかす距離、色 */
+		/* カンマで区切って反対方向にもbox-shadow: 設定 */
+	}
+
+	.box{
+		margin-left: 0px;
+		margin-right: 0px;
+	}
+}
+
+
+/* =====================フッター===================== */
+
+footer{
+	background:#5f5349;
+	color:#fff;
+	padding: 20px 0;
+	text-align: center;
+	font-size: 1.1rem;
+}
+
+/* 上のdiv id containerの１０４０px と同じ幅を文字が超えないように幅を指定する */
+.footer-inner{
+	width: 1040px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/* a tagに入っている上へ戻るボタンはフッターの下に入れる */
+/* まずは、矢印の入っている丸を作る */
+#scroll-btn{
+	position: fixed;
+	bottom: 20px;
+	right: 20px;
+	/* 画面の下から20px、右から20pxに配置 */
+	background: #b19b6a;
+	color: #fff;
+	width: 80px;
+	height: 80px;
+	text-align: center;
+	/* アイコンが真ん中に寄る */
+	text-decoration: none;
+	/* リンクの下線が出ないようにする */
+	border-radius: 50%;
+	/* 四角を丸くする */
+}
+
+/* 次に、fontawesomeから持ってきた矢印（iタグ）のサイズを大きくし、真ん中に配置する */
+#scroll-btn i{
+	font-size: 50px;
+	line-height: 80px;
+}
+
+/* 上に戻るボタン、スマホだと大きすぎるので小さくする */
+@media (max-width: 767px) {
+	.footer-inner{
+		width: 100%;
+	}
+	.footer-inner small{
+		font-size: 12px;
+	}
+
+	/* ボタンのメディアクエリ */
+	#scroll-btn{
+		width: 50px;
+		height: 50px;
+	}
+
+	/* 次に、fontawesomeから持ってきた矢印のサイズを大きくし、真ん中に配置する */
+	#scroll-btn i{
+		font-size: 30px;
+		line-height: 50px;
+		/* scroll-btnのheightと合わせる */
+	}
+}
